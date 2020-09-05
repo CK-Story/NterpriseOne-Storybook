@@ -81,3 +81,17 @@ export const TextArea = () => (
            }}
          />
        );
+
+       export const UnderLined = () => (
+         <TextInput
+           label={"Underlined Field Label:"}
+           underlined={true}
+         />
+       );
+       export const BorderLess = () => (
+         <TextInput
+           label={"Borderless Field"}
+           borderless={true}
+           value={'This is default value in borderless input'}
+         />
+       );

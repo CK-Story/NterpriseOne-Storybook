@@ -7,14 +7,14 @@ export default function Button(props) {
 
     switch (variant) {
         case "primary":
-           return <PrimaryButton text={children}  />
+           return <DefaultButton text={children} primary />
             
         case "default":
            return <DefaultButton text={children} />
         
 
         case "success":
-          return  <DefaultButton text={children} />
+          return  <DefaultButton text={children}  />
         
     
         default:

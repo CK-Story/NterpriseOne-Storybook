@@ -1,6 +1,6 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import {TextField, MaskedTextField} from "office-ui-fabric-react";
+import PropTypes from "prop-types";
+import { TextField, MaskedTextField } from "office-ui-fabric-react";
 import { initializeIcons } from "@uifabric/icons";
 
 /**
@@ -20,9 +20,11 @@ export const TextInput = ({
   required,
   maskFormat,
   textAreaProps,
+  underlined,
+  borderless,
 }) => {
-    let iconProps = { iconName: iconName };
-    initializeIcons();
+  let iconProps = { iconName: iconName };
+  initializeIcons();
   return masked ? (
     <MaskedTextField
       label={label}
@@ -35,6 +37,8 @@ export const TextInput = ({
       onChange={onChangeText}
       iconProps={iconProps}
       required={required}
+      underlined={underlined}
+      borderless={borderless}
     />
   ) : (
     <TextField
@@ -51,6 +55,8 @@ export const TextInput = ({
       autoAdjustHeight={textAreaProps.autoHeight}
       rows={textAreaProps.rows}
       resizable={textAreaProps.resizable}
+      underlined={underlined}
+      borderless={borderless}
     />
   );
 };
@@ -73,7 +79,7 @@ TextInput.propTypes = {
     resizable: PropTypes.bool,
     autoHeight: PropTypes.bool,
   }),
-  
+
   errorMessage: PropTypes.string,
   readOnly: PropTypes.bool,
   masked: PropTypes.bool,
@@ -85,6 +91,9 @@ TextInput.propTypes = {
    - Brackets also can be formated by using bracket in maskFormat prop
    */
   maskFormat: PropTypes.string,
+
+  underlined: PropTypes.bool,
+  borderless: PropTypes.bool,
 };
 
 TextInput.defaultProps = {
@@ -93,6 +102,8 @@ TextInput.defaultProps = {
   masked: false,
   required: false,
   maskFormat: "mask: (999) 999 - 9999",
+  underlined: false,
+  borderless: false,
   textAreaProps: {
     textArea: false,
     rows: 1,
@@ -100,4 +111,3 @@ TextInput.defaultProps = {
     autoHeight: false,
   },
 };
-
